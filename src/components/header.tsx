@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, HomeOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 
@@ -9,7 +9,7 @@ const items: MenuProps['items'] = [
   {
     label: 'Navigation One',
     key: 'mail',
-    icon: <MailOutlined />,
+    icon: <HomeOutlined />,
   },
   {
     label: 'Navigation Two',
@@ -62,15 +62,33 @@ const items: MenuProps['items'] = [
   },
 ];
 
-const AppHeader: React.FC = () => {
-  const [current, setCurrent] = useState('mail');
+// const AppHeader: React.FC = () => {
+//   const [current, setCurrent] = useState('mail');
 
-  const onClick: MenuProps['onClick'] = (e) => {
-    console.log('click ', e);
-    setCurrent(e.key);
-  };
+//   const onClick: MenuProps['onClick'] = (e) => {
+//     console.log('click ', e);
+//     setCurrent(e.key);
+//   };
 
-  return <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
-};
+//   return <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
+// };
+
+const AppHeader = ()=>{
+
+  const links =["Home","About", "Contact", "Book"]
+    return(
+        <header className=' bg-primary p-2'>
+            <div className="logo">
+                <h1>buuk</h1>
+            </div>
+            <nav>
+                <ul>
+                  {links.map(link =>  <li key={links.indexOf(link)}>{link}</li>)}
+                  
+                </ul>
+            </nav>
+        </header>
+    )
+}
 
 export default AppHeader;

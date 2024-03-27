@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import "antd/dist/reset.css";
+// C:\Users\HP\Desktop\project\buuk\node_modules\antd\dist\reset.css
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import AppHeader from "../../components/header";
+import AppHeader from "../components/header";
+import { ConfigProvider } from "antd";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +23,18 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AntdRegistry>
-          <AppHeader/>
-          {children}
-          </AntdRegistry>
+          <ConfigProvider
+            theme={{
+              token: {
+                colorPrimary: "white",
+                colorBgContainer:"#007BFF"
+              },
+            }}
+          >
+            <AppHeader />
+            {children}
+          </ConfigProvider>
+        </AntdRegistry>
       </body>
     </html>
   );
