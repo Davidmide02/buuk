@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Button } from "antd";
+import bookImage from "@/assest/student.jpg"
+// import { url } from "inspector";
 
 export default function Home() {
   return (
@@ -111,8 +113,18 @@ export default function Home() {
     //   </div>
     // </main>
     <main>
-      <h1>Home page</h1>
-      <Button/>
+      <div className="home-con p-8" 
+      // style={{backgroundColor:`url(${bookImage})`}}
+            style={{ backgroundImage: `url(${bookImage.src})` }}
+
+       >
+
+      <div className="top">
+        {/* <h1>Home page</h1> */}
+        <h1>Hello pahe</h1>
+      </div>
+
+      </div>
     </main>
   );
 }

@@ -6,6 +6,8 @@ import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import AppHeader from "../components/header";
 import { ConfigProvider } from "antd";
+import { Breadcrumb, Layout, } from "antd";
+const { Header } = Layout;
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +33,9 @@ export default function RootLayout({
               },
             }}
           >
-            <AppHeader />
+            
+              <AppHeader />
+        
             {children}
           </ConfigProvider>
         </AntdRegistry>

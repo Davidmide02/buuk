@@ -56,13 +56,24 @@ const AppHeader = () => {
           </h1>
         </div>
         <div className="menu">
-          <Menu
-            theme="light"
-            mode="horizontal"
-            defaultSelectedKeys={["home"]}
-            items={items}
-            style={menuStyle}
-          />
+          <Header
+            style={{
+              position: "sticky",
+              top: 0,
+              zIndex: 1,
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Menu
+              theme="light"
+              mode="horizontal"
+              defaultSelectedKeys={["home"]}
+              items={items}
+              style={menuStyle}
+            />
+          </Header>
         </div>
       </div>
     </header>
