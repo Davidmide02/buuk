@@ -27,7 +27,7 @@ export default function RootLayout({
             theme={{
               token: {
                 colorPrimary: "white",
-                colorBgContainer:"#007BFF"
+                colorBgContainer: "#0e21ed",
               },
             }}
           >

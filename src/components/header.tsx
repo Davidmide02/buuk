@@ -1,110 +1,70 @@
 "use client";
-
 import React, { useState } from "react";
 import {
   AppstoreOutlined,
   HomeOutlined,
   SettingOutlined,
   MenuOutlined,
-  CloseOutlined,
+  BookOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Menu } from "antd";
+// import { Menu } from "antd";
+import { Breadcrumb, Layout, Menu, theme } from "antd";
+import Link from "next/link";
+
+const { Header, Content, Footer } = Layout;
 
 const items: MenuProps["items"] = [
   {
-    label: "Navigation One",
-    key: "mail",
+    label: (
+      <Link href={"/"} className="">
+        Home
+      </Link>
+    ),
+    key: "home",
     icon: <HomeOutlined />,
   },
   {
-    label: "Navigation Two",
+    label: <Link href={"/contact"}>Contact</Link>,
     key: "app",
     icon: <AppstoreOutlined />,
-    disabled: true,
   },
   {
-    label: "Navigation Three - Submenu",
-    key: "SubMenu",
-    icon: <SettingOutlined />,
-    children: [
-      {
-        type: "group",
-        label: "Item 1",
-        children: [
-          {
-            label: "Option 1",
-            key: "setting:1",
-          },
-          {
-            label: "Option 2",
-            key: "setting:2",
-          },
-        ],
-      },
-      {
-        type: "group",
-        label: "Item 2",
-        children: [
-          {
-            label: "Option 3",
-            key: "setting:3",
-          },
-          {
-            label: "Option 4",
-            key: "setting:4",
-          },
-        ],
-      },
-    ],
+    label: <Link href={"/About"}>About</Link>,
+    key: "about",
+    icon: <AppstoreOutlined />,
   },
   {
-    label: (
-      <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-        Navigation Four - Link
-      </a>
-    ),
-    key: "alipay",
+    label: <Link href={"/book"}>Books</Link>,
+    key: "books",
+    icon: <BookOutlined />,
   },
 ];
-
-// const AppHeader: React.FC = () => {
-//   const [current, setCurrent] = useState('mail');
-
-//   const onClick: MenuProps['onClick'] = (e) => {
-//     console.log('click ', e);
-//     setCurrent(e.key);
-//   };
-
-//   return <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
-// };
+const menuStyle = {
+  flex: 1,
+  midWith: 0,
+  // backgroundColor: "#0e21ed",
+};
 
 const AppHeader = () => {
-  const links = ["Home", "About", "Contact", "Book"];
   return (
-    <header className=" bg-primary relative p-2 flex flex-col justify-center items-center">
-      <div className="logo">
-        <h1 className="text-2xl italic">buuk</h1>
-      </div>
-      <div className=" md:hidden">
-
-      <MenuOutlined className="text-white p-2 bg-white" />
-      </div>
-      <nav className="bg-green-0 absolute top-0 w-full h-screen text-center p-8">
-        <div className="close flex justify-end">
-          <CloseOutlined className=" text-2xl" />
+    <header className=" font-bold bg-primary p-8 shadow-lg">
+      <div className="con flex justify-between items-center">
+        <div className="logo">
+          <h1 className="text-white italic">
+            B<span className="text-2xl">uu</span>K
+          </h1>
         </div>
-        <ul>
-          {links.map((link) => (
-            <li
-              key={links.indexOf(link)}
-              className="p-2 border-b-2 border-slate-300"
-            >
-              {link}
-            </li>
-          ))}
-        </ul>
-      </nav>
+        <div className="menu">
+          <Menu
+            theme="light"
+            mode="horizontal"
+            defaultSelectedKeys={["home"]}
+            items={items}
+            style={menuStyle}
+          />
+        </div>
+      </div>
     </header>
   );
 };
