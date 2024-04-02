@@ -6,6 +6,7 @@ import {
   TwitterOutlined,
   GithubOutlined,
   LinkedinOutlined,
+  SendOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 // import { Button, Form, Input } from "antd";
@@ -76,13 +77,23 @@ const Footer = () => {
                   message: "Please enter a valid email address!",
                 },
               ]}
-              style={{ color: "white" }}
             >
               <Input placeholder="example101@gmail.com" />
             </Form.Item>
 
             <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-              <Button htmlType="submit">Subscribe</Button>
+              <Button
+                htmlType="submit"
+                style={{
+                  flex: "flex",
+                  justifyContent: "center",
+                  backgroundColor: "white",
+                  textDecorationColor: "red",
+                }}
+                icon={<SendOutlined />}
+              >
+                Subscribe
+              </Button>
             </Form.Item>
           </Form>
         </div>
