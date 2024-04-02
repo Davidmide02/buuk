@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "antd";
-import bookImage from "@/assest/book1.jpg";
+import bookImage from "@/assest/book-p.jpg";
 import bookImage2 from "@/assest/book1.jpg";
 
 // import { url } from "inspector";
@@ -118,9 +118,9 @@ export default function Home() {
       <div
         className="home-con p-8 text-white"
         // style={{backgroundColor:`url(${bookImage})`}}
-        style={{ backgroundImage: `url(${bookImage.src})` }}
+        // style={{ backgroundImage: `url(${bookImage.src})` }}
       >
-        <div className="top text-lg grid grid-cols-2 gap-4 items-center">
+        <div className="top text-lg grid grid-cols-2 gap-4 items-center text-black">
           {/* <h1>Home page</h1> */}
           {/* <h1>Hello pahe</h1> */}
           <div className="home-text-btn p-8">
@@ -128,10 +128,10 @@ export default function Home() {
               Welcome to <span>Buuk</span>.
             </h1>
 
-            <h3 className="text-2xl p-2 w-[70%] leading-8">
+            <h3 className="text-4xl p-2 w-[70%] leading-[3rem] text-black">
               Discover, Connect, and Dive into the World of Books with Buuk
             </h3>
-            <p className=" leading-6 p-2">
+            <p className=" leading-8 p-2">
               Uncover Hidden Gems and Bestsellers Explore a vast collection of
               books ranging from timeless classics to the latest bestsellers.
               Whether you're into fiction, non-fiction, romance, mystery, or
@@ -158,7 +158,22 @@ export default function Home() {
           </div>
 
           <div className="home-image p-8">
-            <Image src={bookImage2} alt="book" width={500} height={300} />
+            <div className="card-con bg-slate-300 p-2 rounded-md">
+              <Image
+                src={bookImage2}
+                alt="book"
+                width={800}
+                height={300}
+                className=" rounded-t-md"
+              />
+              <div className="card-text text-center">
+                <h3>
+                  Readers are leaders, join the over 1000 readers around the
+                  glode
+                </h3>
+                <h3>You change your reading habit you change your life</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
