@@ -3,8 +3,6 @@ import { Button } from "antd";
 import bookImage from "@/assest/book-p.jpg";
 import bookImage2 from "@/assest/book1.jpg";
 
-
-
 export default function Home() {
   return (
     <main>
