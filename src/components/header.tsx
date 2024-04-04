@@ -30,12 +30,12 @@ const items: MenuProps["items"] = [
     icon: <AppstoreOutlined />,
   },
   {
-    label: <Link href={"/About"}>About</Link>,
+    label: <Link href={"/about"}>About</Link>,
     key: "about",
     icon: <AppstoreOutlined />,
   },
   {
-    label: <Link href={"/book"}>Books</Link>,
+    label: <Link href={"/booklist"}>Books</Link>,
     key: "books",
     icon: <BookOutlined />,
   },
