@@ -48,7 +48,7 @@ const menuStyle = {
 
 const AppHeader = () => {
   return (
-    <header className=" font-bold bg-primary p-8 shadow-lg">
+    <header className=" font-bold bg-primary p-8 shadow-lg fixed w-full">
       <div className="con flex justify-between items-center">
         <div className="logo">
           <h1 className="text-white italic">

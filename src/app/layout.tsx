@@ -43,7 +43,10 @@ export default function RootLayout({
               },
             }}
           >
+            <div className="pb-[10rem] bg-gray-300">
+
             <AppHeader />
+            </div>
 
             {children}
             <Footer />
