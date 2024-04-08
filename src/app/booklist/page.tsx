@@ -5,16 +5,24 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { Spin, message, notification } from "antd";
 import axios from "axios";
 // import { log } from "console";
-import React,{useState} from "react";
+import React, { useState } from "react";
 
-type bookType ={
-  book: string
+type Book={
+  id:string;
+  volumeInfo:{
+   title: string;
+   subtitle: string;
+
+    authors:[];
+    description: string;
+    imageLinks:{
+      smallThumbnail:string;
+    }
+    pageCount:number;
+    pusblishedDate:string;
+    publisher:string;
+  }
 }
-
-type booksItems ={
-  Items:[]
-}
-
 const Booklists = () => {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
@@ -48,8 +56,6 @@ const Booklists = () => {
   console.log(books);
   // console.log(books.items);
   // console.log(books.items[0].volumeInfo.description);
-  
-  
 
   // const authors= volumeInfo.authors
   // array
@@ -65,38 +71,26 @@ const Booklists = () => {
   // without items
   // const result number= totalItems
 
-
-
-
-
-  
-
-
-
-
   if (isLoading) {
     <Spin />;
   }
 
   if (isError) {
-    notification.error({message:"Network error"})
+    notification.error({ message: "Network error" });
     // notification.success({ message: res.message });
-
   }
 
   return (
     <div className="bg-green-400">
       <div className="con p-8">
         <h1>Booklists</h1>
-        {/* {
-          books.items.map(book:string)
-        } */}
-      
+        {books && books.items.map((book:Book) => <CardDisplay book={book} />)}
+
         <div className="card-con flex justify-between items-center">
+          {/* <CardDisplay />
           <CardDisplay />
           <CardDisplay />
-          <CardDisplay />
-          <CardDisplay />
+          <CardDisplay /> */}
         </div>
       </div>
     </div>

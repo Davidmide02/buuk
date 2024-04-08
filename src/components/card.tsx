@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import {
   EditOutlined,
@@ -6,16 +6,36 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import { Avatar, Card } from "antd";
+// import { log } from "console";
 
 const { Meta } = Card;
 
-const CardDisplay = () => (
+type Book = {
+  id: string;
+  volumeInfo: {
+    title: string;
+    subtitle: string;
+
+    authors: [];
+    description: string;
+    imageLinks: {
+      smallThumbnail: string;
+    };
+    pageCount: number;
+    pusblishedDate: string;
+    publisher: string;
+  };
+};
+
+const CardDisplay = ({ book }: { book: Book }) => (
+  // console.log(book)
+
   <Card
     style={{ width: 300 }}
     cover={
       <img
         alt="example"
-        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+        src={`${book.volumeInfo.imageLinks}`}
       />
     }
     actions={[
@@ -27,7 +47,7 @@ const CardDisplay = () => (
     <Meta
       avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />}
       title="Book title"
-      description="Book description"
+      description={`${book.volumeInfo.subtitle}`}
     />
   </Card>
 );
