@@ -103,7 +103,7 @@ const Footer = () => {
             href={"https://github.com/Davidmide02"}
             className="hover:text-gray-400 p-1"
           >
-            <h3>Develop and Design by Davidmide ❤</h3>
+            <h3>Design and Develop by Davidmide ❤</h3>
           </Link>
         </div>
       </div>

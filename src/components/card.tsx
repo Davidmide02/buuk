@@ -1,10 +1,15 @@
-import React from 'react';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import { Avatar, Card } from 'antd';
+"use client"
+import React from "react";
+import {
+  EditOutlined,
+  EllipsisOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
+import { Avatar, Card } from "antd";
 
 const { Meta } = Card;
 
-const CardDisplay= () => (
+const CardDisplay = () => (
   <Card
     style={{ width: 300 }}
     cover={

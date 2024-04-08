@@ -10,8 +10,10 @@ import { Breadcrumb, Layout } from "antd";
 import Footer from "@/components/footer";
 const { Header } = Layout;
 import { Head } from "next/document";
+import QueryProvider from "@/utensil/queryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Buuk",
@@ -34,24 +36,25 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <AntdRegistry>
-          <ConfigProvider
-            theme={{
-              token: {
-                colorPrimary: "white",
-                colorBgContainer: "#0e21ed",
-              },
-            }}
-          >
-            <div className="pb-[10rem] bg-gray-300">
+        <QueryProvider>
+          <AntdRegistry>
+            <ConfigProvider
+              theme={{
+                token: {
+                  colorPrimary: "white",
+                  colorBgContainer: "#0e21ed",
+                },
+              }}
+            >
+              <div className="pb-[10rem] bg-gray-300">
+                <AppHeader />
+              </div>
 
-            <AppHeader />
-            </div>
-
-            {children}
-            <Footer />
-          </ConfigProvider>
-        </AntdRegistry>
+              {children}
+              <Footer />
+            </ConfigProvider>
+          </AntdRegistry>
+        </QueryProvider>
       </body>
     </html>
   );
