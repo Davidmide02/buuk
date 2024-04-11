@@ -34,13 +34,14 @@ const CardDisplay = ({ book }: { book: Book }) => (
     style={{ width: 300 }}
     cover={
       <img
-        alt="example"
-        src={`${book.volumeInfo.imageLinks}`}
+        alt="bookCover"
+        src={`${book.volumeInfo.imageLinks.smallThumbnail}`}
+        className="w-[30%]"
       />
     }
     actions={[
-      <SettingOutlined key="setting" />,
-      <EditOutlined key="edit" />,
+      // <SettingOutlined key="setting" />,
+      // <EditOutlined key="edit" />,
       <EllipsisOutlined key="ellipsis" />,
     ]}
   >

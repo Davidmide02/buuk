@@ -7,22 +7,22 @@ import axios from "axios";
 // import { log } from "console";
 import React, { useState } from "react";
 
-type Book={
-  id:string;
-  volumeInfo:{
-   title: string;
-   subtitle: string;
+type Book = {
+  id: string;
+  volumeInfo: {
+    title: string;
+    subtitle: string;
 
-    authors:[];
+    authors: [];
     description: string;
-    imageLinks:{
-      smallThumbnail:string;
-    }
-    pageCount:number;
-    pusblishedDate:string;
-    publisher:string;
-  }
-}
+    imageLinks: {
+      smallThumbnail: string;
+    };
+    pageCount: number;
+    pusblishedDate: string;
+    publisher: string;
+  };
+};
 const Booklists = () => {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
@@ -84,13 +84,13 @@ const Booklists = () => {
     <div className="bg-green-400">
       <div className="con p-8">
         <h1>Booklists</h1>
-        {books && books.items.map((book:Book) => <CardDisplay book={book} />)}
 
-        <div className="card-con flex justify-between items-center">
-          {/* <CardDisplay />
-          <CardDisplay />
-          <CardDisplay />
-          <CardDisplay /> */}
+        <div className="card-con grid grid-cols-4 justify-between items-center">
+          {books && books.items
+            ? books.items.map((book: Book) => (
+                <CardDisplay key={book.id} book={book} />
+              ))
+            : null}
         </div>
       </div>
     </div>
