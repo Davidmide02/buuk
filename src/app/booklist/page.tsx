@@ -87,7 +87,7 @@ const Booklists = () => {
   }
 
   return (
-    <div className="bg-green-400">
+    <div className="">
       <div className="con p-8">
         <div className="title text-center text-2xl font-bold p-2">
         <h1>Booklists</h1>
@@ -95,7 +95,7 @@ const Booklists = () => {
         <div className="search">
           search book here
         </div>
-        <div className="card-con grid grid-cols-4 justify-between items-center">
+        <div className="card-con flex flex-wrap md:grid md:grid-cols-4 md:gap-2 justify-between items-center">
           {books && books.items
             ? books.items.map((book: Book) => (
                 <CardDisplay key={book.id} book={book} />
