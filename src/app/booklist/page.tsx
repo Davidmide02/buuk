@@ -72,7 +72,13 @@ const Booklists = () => {
   // const result number= totalItems
 
   if (isLoading) {
-    <Spin />;
+    return ( 
+    <Spin
+      spinning
+      className="w-full h-[70vh] bg-white flex justify-center items-center rounded-xl shadow-xl text-primary"
+      size="large"
+    />)
+  
   }
 
   if (isError) {
@@ -83,8 +89,12 @@ const Booklists = () => {
   return (
     <div className="bg-green-400">
       <div className="con p-8">
+        <div className="title text-center text-2xl font-bold p-2">
         <h1>Booklists</h1>
-
+        </div>
+        <div className="search">
+          search book here
+        </div>
         <div className="card-con grid grid-cols-4 justify-between items-center">
           {books && books.items
             ? books.items.map((book: Book) => (

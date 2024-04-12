@@ -36,7 +36,7 @@ const CardDisplay = ({ book }: { book: Book }) => (
       <img
         alt="bookCover"
         src={`${book.volumeInfo.imageLinks.smallThumbnail}`}
-        className="w-[30%]"
+        className="w-[20%] h-[30%]"
       />
     }
     actions={[

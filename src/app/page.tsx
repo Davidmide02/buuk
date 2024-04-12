@@ -11,13 +11,13 @@ export default function Home() {
         // style={{backgroundColor:`url(${bookImage})`}}
         // style={{ backgroundImage: `url(${bookImage.src})` }}
       >
-        <div className="top text-lg grid grid-cols-2 gap-4 text-black">
-          <div className="home-text-btn p-8">
+        <div className="top text-lg flex flex-col-reverse md:grid md:grid-cols-2 md:gap-4 text-black">
+          <div className="home-text-btn p-8 flex flex-col items-center md:block">
             <h1 className=" text-4xl text-primary p-2 mb-2">
-              Welcome to <span>Buuk</span>.
+              Welcome to <span>Buuk!</span>
             </h1>
 
-            <h3 className="text-4xl p-2 w-[70%] leading-[3rem] text-black">
+            <h3 className="text-4xl p-2 md:w-[70%] leading-[3rem] text-black">
               Discover, Connect, and Dive into the World of Books with Buuk
             </h3>
             <p className=" leading-8 p-2">
@@ -28,25 +28,17 @@ export default function Home() {
               recommendations tailored just for you!
             </p>
             <div className="btns p-2">
-              <Button
-                size="large"
-                style={{
-                  padding: "",
-                  backgroundColor: "transparent",
-                  border: "2px solid rbg(14 33 237)",
-                  marginRight: "4px",
-                }}
-              >
+              <Button size="large" className="mr-2">
                 Join
               </Button>
-              <Button size="large" style={{ color: "white" }}>
+              <Button size="large" className="bg-primary text-white">
                 Sign in
               </Button>
             </div>
           </div>
 
           <div className="home-image p-8">
-            <div className="card-con bg-slate-300 p-2 rounded-md">
+            <div className="card-con shadow-2xl p-2 rounded-md">
               <Image
                 src={bookImage2}
                 alt="book"

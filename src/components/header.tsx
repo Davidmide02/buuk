@@ -7,14 +7,12 @@ import {
   MenuOutlined,
   BookOutlined,
 } from "@ant-design/icons";
-import type { MenuProps } from "antd";
-// import { Menu } from "antd";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+
+import {  Button, Menu  } from "antd";
 import Link from "next/link";
 
-const { Header, Content, Footer } = Layout;
 
-const items: MenuProps["items"] = [
+const items = [
   {
     label: (
       <Link href={"/"} className="">
@@ -40,40 +38,41 @@ const items: MenuProps["items"] = [
     icon: <BookOutlined />,
   },
 ];
-const menuStyle = {
-  flex: 1,
-  midWith: 0,
-  // backgroundColor: "#0e21ed",
-};
+
+
+
+
+// const menuStyle = {
+
+  
+// };
 
 const AppHeader = () => {
   return (
-    <header className=" font-bold bg-primary p-8 shadow-lg fixed w-full">
+    <header className=" font-bold bg-primary p-6 shadow-lg fixed w-full z-10">
       <div className="con flex justify-between items-center">
         <div className="logo">
-          <h1 className="text-white italic">
-            B<span className="text-2xl">uu</span>K
+          <h1 className="text-white text-2xl italic">
+            B<span className="text-lg">uu</span>K
           </h1>
         </div>
-        <div className="menu">
-          <Header
-            style={{
-              position: "sticky",
-              top: 0,
-              zIndex: 1,
-              width: "100%",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
+
+        <div className="menu w-1/2">
+         
             <Menu
-              theme="light"
+              // theme="light"
               mode="horizontal"
               defaultSelectedKeys={["home"]}
               items={items}
-              style={menuStyle}
-            />
-          </Header>
+              // style={{ backgroundColor:"green", display:"flex", alignItems:"center", textAlign:"center"}}
+            >
+              </Menu>
+         
+        </div>
+        <div className="auth flex">
+          <Button className="text-white mr-1">Sign in</Button>
+          <Button className="bg-white">Sign out</Button>
+
         </div>
       </div>
     </header>
@@ -81,3 +80,23 @@ const AppHeader = () => {
 };
 
 export default AppHeader;
+
+{/* <Header
+style={{
+  position: 'sticky',
+  top: 0,
+  zIndex: 1,
+  width: '100%',
+  display: 'flex',
+  alignItems: 'center',
+}}
+>
+<div className="demo-logo" />
+<Menu
+  theme="dark"
+  mode="horizontal"
+  defaultSelectedKeys={['2']}
+  items={items}
+  style={{ flex: 1, minWidth: 0 }}
+/>
+</Header> */}

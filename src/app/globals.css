@@ -13,6 +13,18 @@
   font-family: "Poppins", sans-serif;
 }
 
+
+
+.ant-menu-horizontal {
+  background-color: transparent;
+  width: 70%;
+  margin: auto;
+  color: yellow;
+}
+
+.ant-menu-horizontal .ant-menu-item {
+  color: white;
+}
 /* .home-image{
   border-color: rgb(9, 9, 240);
   background-color: blue;

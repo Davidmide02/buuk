@@ -34,8 +34,8 @@ const Footer = () => {
       style={{ backgroundImage: `url(${footerImage})` }}
       className=" bg-primary text-white"
     >
-      <div className="con grid grid-cols-4 justify-between p-8">
-        <div className="socials">
+      <div className="con flex flex-col md:grid md:grid-cols-4 md:justify-between p-8">
+        <div className="socials w-full text-center p-2 md:p-0">
           <Link
             href={"https://twitter.com/Davidmide02"}
             className="text-2xl hover:text-gray-400 p-1"
@@ -56,7 +56,7 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="newsletter col-span-2">
+        <div className="newsletter p-2 md:p-0 md:col-span-2 w-full text-center">
           <Form
             name="basic"
             labelCol={{ span: 8 }}
@@ -77,6 +77,8 @@ const Footer = () => {
                   message: "Please enter a valid email address!",
                 },
               ]}
+              className="text-white"
+              style={{color:"white"}}
             >
               <Input placeholder="example101@gmail.com" />
             </Form.Item>
@@ -98,7 +100,7 @@ const Footer = () => {
           </Form>
         </div>
 
-        <div className="dev-info">
+        <div className="dev-info p-2 md:p-0 w-full text-center">
           <Link
             href={"https://github.com/Davidmide02"}
             className="hover:text-gray-400 p-1"

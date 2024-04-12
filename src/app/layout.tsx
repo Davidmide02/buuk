@@ -3,12 +3,11 @@ import "antd/dist/reset.css";
 // C:\Users\HP\Desktop\project\buuk\node_modules\antd\dist\reset.css
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
+
 import AppHeader from "../components/header";
-import { ConfigProvider } from "antd";
-import { Breadcrumb, Layout } from "antd";
+
 import Footer from "@/components/footer";
-const { Header } = Layout;
+
 import { Head } from "next/document";
 import QueryProvider from "@/utensil/queryProvider";
 
@@ -37,23 +36,13 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <QueryProvider>
-          <AntdRegistry>
-            <ConfigProvider
-              theme={{
-                token: {
-                  colorPrimary: "white",
-                  colorBgContainer: "#0e21ed",
-                },
-              }}
-            >
-              <div className="pb-[10rem] bg-gray-300">
+        
+              <div className="pb-[10rem]">
                 <AppHeader />
               </div>
 
               {children}
               <Footer />
-            </ConfigProvider>
-          </AntdRegistry>
         </QueryProvider>
       </body>
     </html>

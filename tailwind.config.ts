@@ -15,10 +15,15 @@ const config: Config = {
       },
       colors: {
         // primary:"#007BFF"
-        primary: "#0e21ed",
+        primary: "#11d0ed",
+        btnColor: "#0ca8cc",
+        btnHover: "#0d84a6"
       },
     },
   },
   plugins: [],
 };
 export default config;
+// #0274B3
+// #0e21ed
+// #11d0ed
