@@ -1,5 +1,6 @@
 "use client";
 import CardDisplay from "@/components/card";
+import Modal from "@/components/modal";
 import query from "@/utensil/useFetch";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { Spin, message, notification } from "antd";
@@ -72,13 +73,13 @@ const Booklists = () => {
   // const result number= totalItems
 
   if (isLoading) {
-    return ( 
-    <Spin
-      spinning
-      className="w-full h-[70vh] bg-white flex justify-center items-center rounded-xl shadow-xl text-primary"
-      size="large"
-    />)
-  
+    return (
+      <Spin
+        spinning
+        className="w-full h-[70vh] bg-white flex justify-center items-center rounded-xl shadow-xl text-primary"
+        size="large"
+      />
+    );
   }
 
   if (isError) {
@@ -90,15 +91,16 @@ const Booklists = () => {
     <div className="">
       <div className="con p-8">
         <div className="title text-center text-2xl font-bold p-2">
-        <h1>Booklists</h1>
+          <h1>Booklists</h1>
         </div>
-        <div className="search">
-          search book here
-        </div>
+        <div className="search">search book here</div>
         <div className="card-con flex flex-wrap md:grid md:grid-cols-4 md:gap-2 justify-between items-center">
           {books && books.items
             ? books.items.map((book: Book) => (
-                <CardDisplay key={book.id} book={book} />
+                <>
+                  <CardDisplay key={book.id} book={book} />
+                  <Modal  book={book}/>
+                </>
               ))
             : null}
         </div>

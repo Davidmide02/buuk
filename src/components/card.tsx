@@ -58,6 +58,6 @@ export default CardDisplay;
 
 // todo
 // auth
-// search 
-// more details about book 
-// home page animation 
+// search
+// more details about book
+// home page animation
